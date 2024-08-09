@@ -8,6 +8,7 @@ import static com.mycompany.balanceamentolinhademontagem.LeituraInstancia.lerIns
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 /**
  *
  * @author USER
@@ -52,10 +53,53 @@ public class MainBalanceamentoLinhaDeMontagem {
         
         System.out.println("-------------------------------------------------------");
         
+        /*
         ArrayList<Integer> adicionados = BalanceamentoLinhaDeMontagem.getAdicionados();
     
         for(Integer ad: adicionados){
             System.out.println(ad);
         }
+        */
+        
+        
+        Map<Integer, Integer> maquinas = BalanceamentoLinhaDeMontagem.getMaquinas();
+        for(int key : maquinas.keySet()){
+            System.out.println(key + ":" + maquinas.get(key));
+        }
+        
+        System.out.println("-------------------------------------------------------");
+        
+        teste.gerarSolucao();
+        
+        System.out.println("-------------------------------------------------------");
+        
+        /*
+        teste.estruturaDeVizinhanca(6);
+        for(int key : maquinas.keySet()){
+            System.out.println(key + ":" + maquinas.get(key));
+        }*/
+        
+        for(int i = 1; i<BalanceamentoLinhaDeMontagem.somaMaquinas.length;i++){
+            System.out.println(BalanceamentoLinhaDeMontagem.somaMaquinas[i]);
+        }
+        System.out.println("-----------------------------------------------------");
+        System.out.println(teste.getMax(BalanceamentoLinhaDeMontagem.somaMaquinas));
+        System.out.println("-------------------------------------------------------");
+        
+        teste.heuristicaDePrimeiraMelhora(3);
+    
+        //System.out.println(teste.getMax(BalanceamentoLinhaDeMontagem.getSomaMaquinas()));
+        
+        for(int key : maquinas.keySet()){
+            System.out.println(key + ":" + maquinas.get(key));
+        }
+        
+        System.out.println("-------------------------------------------------------");
+        
+        for(int i = 1; i<BalanceamentoLinhaDeMontagem.somaMaquinas.length;i++){
+            System.out.println(BalanceamentoLinhaDeMontagem.somaMaquinas[i]);
+        }
+        System.out.println("-----------------------------------------------------");
+        System.out.println(teste.getMax(BalanceamentoLinhaDeMontagem.somaMaquinas));
     }
 }
